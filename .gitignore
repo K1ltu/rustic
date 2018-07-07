@@ -3,3 +3,6 @@
 ################################################################################
 
 /.idea/.idea.rustic
+/.vs/rustic/v15
+/rustic/bin/Debug
+/rustic/obj/Debug

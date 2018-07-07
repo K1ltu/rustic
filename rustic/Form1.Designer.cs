@@ -397,9 +397,9 @@
             this.ServerWipe.AutoSize = true;
             this.ServerWipe.Location = new System.Drawing.Point(13, 113);
             this.ServerWipe.Name = "ServerWipe";
-            this.ServerWipe.Size = new System.Drawing.Size(107, 17);
+            this.ServerWipe.Size = new System.Drawing.Size(137, 17);
             this.ServerWipe.TabIndex = 6;
-            this.ServerWipe.Text = "Wipe On Launch";
+            this.ServerWipe.Text = "Wipe On Launch (WIP)";
             this.ServerWipe.UseVisualStyleBackColor = true;
             // 
             // ServerIdentityField

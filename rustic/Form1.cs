@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
-using System.Drawing;
 using System.IO;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace rustic
@@ -25,7 +19,6 @@ namespace rustic
             this.ServerRconWebField.SelectedIndex = 0;
             this.ServerMaxPlayers.SelectedIndex = 3;
             this.buttonLaunch.Enabled = false;
-
         }
 
         private void buttonExecuatable_Click(object sender, EventArgs e)
@@ -42,7 +35,6 @@ namespace rustic
                     rustExe = openFileDialog1.FileName;
                     this.labelExecuatable.Text = rustExe;
                     this.buttonLaunch.Enabled = true;
-
                 }
                 catch (Exception ex)
                 {
@@ -70,7 +62,6 @@ namespace rustic
                     MessageBox.Show("Error: Could not read file from disk. Original error: " + ex.Message);
                 }
             }
-
         }
 
         private void buttonLaunch_Click(object sender, EventArgs e)
@@ -155,17 +146,11 @@ namespace rustic
             {
                 launchArgs.Append($"+rcon.web {this.ServerRconWebField.Text} ");
             }
-
             if (this.Args.Checked)
             {
                 MessageBox.Show(launchArgs.ToString());
                 Clipboard.SetText(launchArgs.ToString());
             }
-
-            //            string strCmdText;
-            //            strCmdText = $"/C {rustExe} {launchArgs.ToString()}";
-            //            System.Diagnostics.Process.Start("CMD.exe", strCmdText);
-
             proc1 = new Process
             {
                 StartInfo = new ProcessStartInfo
