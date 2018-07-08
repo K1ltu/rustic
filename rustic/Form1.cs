@@ -84,23 +84,24 @@ namespace rustic
             }
             if (this.ServerLevelType.SelectedIndex == 0)
             {
-                if (customMap.Equals(String.Empty))
+                if (this.ServerMapUrl.Text.Equals(String.Empty))
                 {
                     MessageBox.Show("There is no level url set");
                     return;
                 }
-                launchArgs.Append($"-levelurl \"{this.customMap}\" ");
+                launchArgs.Append($"-levelurl \"{this.ServerMapUrl.Text}\" ");
             }
             else
             {
                 try
                 {
-                    Convert.ToInt32(this.ServerWorldSize.Text);
+                    Convert.ToInt32(this.ServerSeedField.Text);
                     launchArgs.Append($"+server.level \"Procedural Map\" +server.seed {this.ServerSeedField.Text} +server.worldsize {this.ServerWorldSizeField.Text} ");
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show("Error: Malformed or Blank world seed");
+                    return;
                 }
                 
             }
